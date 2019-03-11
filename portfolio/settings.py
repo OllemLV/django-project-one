@@ -87,6 +87,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio/static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 # both 'media' and '/media/' are arbitrary (but follow tradition)) ), can differ frome one another

@@ -34,6 +34,8 @@
   <!-- Custom styles for this template -->
   <link href="album.css" rel="stylesheet">
 </head>
+
+
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -53,23 +55,13 @@
 
   <main role="main">
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">My Blog</h1>
-      </div>
-    </section>
-
     <div class="container">
-      <h2>Latest posts:</h2>
+      <h2>{{ blog.title }}</h2>
+      <p>{{ blog.publication_date_better }}</p>
       <hr>
-      {% for article in blog.all %}
-        <a href=""><p style="font-size:1.5em"><b>{{ article.title }}</b></p></a>
-
-        <p>{{ article.publication_date_better }}</p>
-        <img style="width:10%" src="{{ article.image.url }}" alt="Ooops! Doesn't work(((">
-        <p>{{ article.summary }}</p>
-        <hr>
-      {% endfor %}
+      <img style="width:20%" src="{{ blog.image.url }}" alt="Ooops! Doesn't work(((">
+      <p>{{ blog.post_content }}</p>
+      <hr>
     </div>
 
   </main>
