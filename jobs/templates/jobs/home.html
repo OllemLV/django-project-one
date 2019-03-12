@@ -2,38 +2,34 @@
 {% load staticfiles %}
 
 {% block base_block %}
-  <main role="main">
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Hi, I'm Olga</h1>
-        <p class="lead text-muted">And here will be some basic text about info below.</p>
-        <p>
-          <a href="mailto:ollem1@yandex.ru" class="btn btn-primary my-2">Email me</a>
-        </p>
-        <img src="{% static 'avva.png' %}" style="weight:10%" alt="">
-      </div>
-    </section>
-
-    <div class="album py-5 bg-light">
-      <div class="container">
-
-        <div class="row">
-          {% for job in jobs.all %}
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Hi, I'm Olga</h1>
+      <p class="lead text-muted">And here will be some basic text about info below.</p>
+      <p>
+        <a href="mailto:ollem1@yandex.ru" class="btn btn-primary my-2">Email me (may not work in your browser yet)</a>
+      </p>
+      <img src="{% static 'avva.png' %}" style="weight:10%" alt="">
+    </div>
+  </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for job in jobs.all %}
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm">
               <img class="card-img-top" src="{{ job.image.url }}" alt="Ooops! Doesn't work(((">
-              <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
               <div class="card-body">
                 <p class="card-text">{{ job.description }}</p>
               </div>
             </div>
           </div>
-          {% endfor %}
-        </div>
+        {% endfor %}
       </div>
     </div>
-
-  </main>
+  </div>
+</main>
 
 {% endblock %}

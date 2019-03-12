@@ -2,27 +2,23 @@
 {% load staticfiles %}
 
 {% block base_block %}
-  <main role="main">
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">My Blog</h1>
-      </div>
-    </section>
+<style>
+  #Blog {color: white;}
+</style>
 
-    <div class="container">
-      <h2>Latest posts:</h2>
+<main role="main">
+  <div class="container">
+    <h2>Latest posts:</h2>
+    <hr>
+    {% for article in blog.all %}
+      <a href="{% url 'detail' article.id %}"><p style="font-size:1.5em"><b>{{ article.title }}</b></p></a>
+      <p>{{ article.publication_date_better }}</p>
+      <img style="width:10%" src="{{ article.image.url }}" alt="Ooops! Doesn't work(((">
+      <p>{{ article.summary }}</p>
       <hr>
-      {% for article in blog.all %}
-        <a href="{% url 'detail' article.id %}"><p style="font-size:1.5em"><b>{{ article.title }}</b></p></a>
+    {% endfor %}
+  </div>
+</main>
 
-        <p>{{ article.publication_date_better }}</p>
-        <img style="width:10%" src="{{ article.image.url }}" alt="Ooops! Doesn't work(((">
-        <p>{{ article.summary }}</p>
-        <hr>
-      {% endfor %}
-    </div>
-
-  </main>
-
-  {% endblock %}
+{% endblock %}

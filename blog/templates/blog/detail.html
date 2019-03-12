@@ -2,14 +2,20 @@
 {% load staticfiles %}
 
 {% block base_block %}
-  <main role="main">
-    <div class="container">
-      <h2>{{ blog.title }}</h2>
-      <p>{{ blog.publication_date_better }}</p>
-      <hr>
-      <img style="width:20%" src="{{ blog.image.url }}" alt="Ooops! Doesn't work(((">
-      <p>{{ blog.post_content }}</p>
-      <hr>
-    </div>
-  </main>
+
+<style media="screen">
+  #Blog {color: white;}
+</style>
+
+<main role="main">
+  <div class="container">
+    <h2>{{ blog.title }}</h2>
+    <p>{{ blog.publication_date_better }}</p>
+    <hr>
+    <img style="width:20%" src="{{ blog.image.url }}" alt="Ooops! Doesn't work(((">
+    <p>{{ blog.post_content }}</p>
+    <hr>
+  </div>
+</main>
+
 {% endblock %}
